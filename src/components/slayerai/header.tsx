@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/slayerai/logo.svg";
 
-import { useScrollPosition } from "@/app/hooks/useScrollPosition";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const Header = () => {
   const scrollPosition = useScrollPosition();
