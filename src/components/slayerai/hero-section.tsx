@@ -59,13 +59,14 @@ const HeroSection = () => {
         <span className="mb-6 text-4xl font-bold">Getting Started</span>
         <span className="text-gray-500">You're only a few clicks away</span>
       </div>
-      <div className="mb-20 grid w-full grid-cols-1 md:grid-cols-3 gap-4 px-4 sm:max-w-xl md:max-w-6xl">
+      <div className="mb-20 grid w-full grid-cols-1 gap-4 px-4 sm:max-w-xl md:max-w-6xl md:grid-cols-3">
         {items.map((item, idx) => (
-          <div className="flex flex-col items-center justify-center space-y-4  rounded-3xl bg-white p-10 shadow-xl">
+          <div
+            key={idx}
+            className="flex flex-col items-center justify-center space-y-4  rounded-3xl bg-white p-10 shadow-xl"
+          >
             <Image src={item.image} alt="" />
-            <span className="text-2xl font-bold">
-              {item.headline}
-            </span>
+            <span className="text-2xl font-bold">{item.headline}</span>
             <span className="text-sm leading-6 text-gray-500">
               {item.description}
             </span>
