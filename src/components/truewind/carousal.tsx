@@ -8,7 +8,7 @@ import Nimbus from "@/public/truewind/nimbus.svg";
 import MozartData from "@/public/truewind/mozart-data.svg";
 import YCombinator from "@/public/truewind/ycombinator.svg";
 
-import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
 const Carousal = () => {
   return (
@@ -20,24 +20,16 @@ const Carousal = () => {
           </span>
         </div>
 
-        <motion.ul
-          className="flex flex-row space-x-16"
-          animate={{
-            translateX: ["0", "-100%"],
-          }}
-          transition={{
-            duration: 30,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
-          <Image src={SightMachine} alt="" width={150} height={150} />
-          <Image src={Mio} alt="" width={150} height={150} />
-          <Image src={Nimbus} alt="" width={150} height={150} />
-          <Image src={FlagRight} alt="" width={150} height={150} />
-          <Image src={MozartData} alt="" width={150} height={150} />
-          <Image src={YCombinator} alt="" width={150} height={150} />
-        </motion.ul>
+        <Marquee>
+          <div className="flex flex-row space-x-1 md:space-x-16">
+            <Image src={SightMachine} alt="" width={150} height={150} />
+            <Image src={Mio} alt="" width={150} height={150} />
+            <Image src={Nimbus} alt="" width={150} height={150} />
+            <Image src={FlagRight} alt="" width={150} height={150} />
+            <Image src={MozartData} alt="" width={150} height={150} />
+            <Image src={YCombinator} alt="" width={150} height={150} />
+          </div>
+        </Marquee>
       </div>
     </section>
   );
