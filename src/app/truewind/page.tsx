@@ -13,7 +13,7 @@ const TruewindPage = () => {
       <Carousal />
       <SmartBookkeeping />
       <Testimonials />
-      {/* <Featured />  */}
+      <Featured /> 
     </div>
   );
 };

@@ -15,7 +15,7 @@ export default function SlayerLayout({
     <section className="min-h-screen bg-white text-black">
       <Header />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </section>
   );
 }
