@@ -27,13 +27,13 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-gray-200 py-24">
-      <div className="relative mx-auto max-w-7xl">
-        <Slider {...settings} ref={sliderRef} className="relative">
+    <section className="bg-gray-200 py-36">
+      <div className="relative mx-auto px-8 md:max-w-7xl">
+        <Slider {...settings} ref={sliderRef} className="relative pb-12 md:pb-0">
           {testimonials.map((testimonial, idx) => (
             <div key={idx}>
-              <div className="flex flex-row items-center space-x-10 justify-center">
-                <div className="flex w-1/2 items-center justify-center">
+              <div className="flex flex-col items-center justify-center space-y-10 md:flex-row md:space-x-10 md:space-y-0">
+                <div className="flex items-center justify-center md:w-1/2">
                   <div className="relative pb-10 pr-10">
                     <div className="absolute inset-0 left-20 top-20 z-0 rounded-xl border-2 border-black" />
                     <Image
@@ -46,11 +46,11 @@ const Testimonials = () => {
                   </div>
                 </div>
 
-                <div className="flex w-1/2 flex-col space-y-5">
-                  <span className="text-6xl font-bold leading-[4rem]">
+                <div className="flex flex-col space-y-5 md:w-1/2">
+                  <span className="text-4xl font-bold md:text-6xl md:leading-[4rem]">
                     {testimonial.quote}
                   </span>
-                  <span className="pr-12 text-xl font-medium leading-9 text-gray-600">
+                  <span className="text-xl font-medium leading-9 text-gray-600 md:pr-12">
                     {testimonial.description}
                   </span>
                   <div className="flex flex-row items-center space-x-3">
@@ -67,7 +67,7 @@ const Testimonials = () => {
           ))}
         </Slider>
 
-        <div className="absolute bottom-0 right-0 flex flex-col space-y-2">
+        <div className="absolute -bottom-10 md:bottom-0 flex flex-row-reverse md:right-10 md:flex-col md:space-y-2 ">
           <button
             className="rounded-full bg-[#F9C303] p-4"
             onClick={handleNextSlide}
@@ -75,7 +75,7 @@ const Testimonials = () => {
             <FaLongArrowAltRight size={30} />
           </button>
           <button
-            className="rounded-full bg-[#F9C303] p-4"
+            className="mr-2 md:mr-0 rounded-full bg-[#F9C303] p-4"
             onClick={handlePrevSlide}
           >
             <FaLongArrowAltLeft size={30} />

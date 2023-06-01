@@ -59,3 +59,11 @@ export const testimonials = [
     image: Testimonial3,
   },
 ];
+
+export const navItems = [
+  { name: "Home", path: "/truewind" },
+  { name: "About", path: "/truewind/about" },
+  { name: "Product", path: "/truewind/product" },
+  { name: "Musings", path: "/truewind/musings" },
+  { name: "Hiring", path: "/truewind/hiring" },
+];

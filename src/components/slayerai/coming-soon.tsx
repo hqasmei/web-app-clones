@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ComingSoonBg from "../../../public/slayerai/coming-soon.svg";
+import ComingSoonBg from "@/public/slayerai/coming-soon.svg";
 
 const ComingSoon = () => {
   return (

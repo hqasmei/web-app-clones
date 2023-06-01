@@ -1,12 +1,17 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Logo from "../../../public/truewind/logo.svg";
+import Logo from "@/public/truewind/logo.png";
+import { navItems } from "@/utils/constants";
+
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   return (
-    <header className="flex h-20 items-center  border bg-white text-black">
+    <header className="sticky top-0 z-50 flex h-20 items-center border bg-white text-black">
       <div className="mx-auto flex w-full flex-row items-center justify-between px-10 md:max-w-7xl">
         <div>
           <Image src={Logo} alt="" width={130} height={130} />
@@ -14,11 +19,19 @@ const Header = () => {
 
         <div className="flex flex-row space-x-10 text-sm">
           <div className="flex flex-row space-x-6">
-            <Link href="/truewind">Home</Link>
-            <Link href="/truewind">About</Link>
-            <Link href="/truewind">Product</Link>
-            <Link href="/truewind">Musings</Link>
-            <Link href="/truewind">Hiring</Link>
+            {navItems.map((item, idx) => (
+              <Link
+                key={idx}
+                href={item.path}
+                className={
+                  pathname == item.path
+                    ? "text-[#F9C303] underline decoration-2 underline-offset-8"
+                    : "hover:text-[#F9C303] hover:underline hover:decoration-2 hover:underline-offset-8"
+                }
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
           <div>

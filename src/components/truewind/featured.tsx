@@ -10,7 +10,7 @@ const Featured = () => {
     <div className="flex flex-col items-center justify-center space-y-56 py-52">
       <div className="flex flex-col items-center space-y-6">
         <span className="font-semibold tracking-widest"> FEATURED BY</span>
-        <div className="flex flex-row space-x-6">
+        <div className="flex flex-col space-y-5 md:flex-row md:space-x-6">
           <Image src={Featured1} alt="" width={250} height={150} />
           <Image src={Featured2} alt="" width={250} height={150} />
           <Image src={Featured3} alt="" width={250} height={150} />
