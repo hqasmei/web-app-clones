@@ -6,7 +6,7 @@ import Phone1 from "@/public/slayerai/phone1.svg";
 import Phone2 from "@/public/slayerai/phone2.svg";
 import Customize from "@/public/slayerai/customize.svg";
 import Generate from "@/public/slayerai/generate.svg";
-import Prompt from "@public/slayerai/prompt.svg";
+import Prompt from "@/public/slayerai/prompt.svg";
 
 const items = [
   {

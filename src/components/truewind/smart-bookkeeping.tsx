@@ -17,7 +17,7 @@ const SmartBookkeeping = () => {
           detailed financial models, built exclusively for startups
         </span>
       </div>
-      <div className="grid grid-cols-3 gap-8 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         {items.map((item, idx) => (
           <div
             key={idx}

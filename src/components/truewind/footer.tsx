@@ -16,7 +16,7 @@ const Footer = () =>
   return (
     <footer className="bg-[#ECF0F2]">
       <div className="mx-auto px-10 md:max-w-7xl">
-        <div className="flex flex-row justify-between pb-24 pt-36">
+        <div className="flex flex-col space-y-12 md:space-y-0 md:flex-row md:justify-between pb-24 pt-36">
           <div>
             <Image src={Logo} alt="" width={130} height={130} />
           </div>
@@ -37,7 +37,7 @@ const Footer = () =>
             ))}
           </div>
         </div>
-        <div className="flex flex-row justify-between pb-10 text-sm">
+        <div className="flex flex-col md:flex-row md:justify-between pb-10 text-sm items-start md:items-center space-y-6 md:space-y-0">
           <div className="flex flex-row items-center justify-center space-x-2">
             <Link href="" className="group">
               <div className="relative pb-2 pr-2">

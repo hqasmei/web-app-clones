@@ -27,7 +27,7 @@ const Featured = () => {
           deserve. Get set up on Truewind in a few minutes and we’ll take care
           of the rest.
         </span>
-        <button className="rounded-lg bg-[#F9C303] px-10 py-3 text-lg font-semibold">
+        <button className="duration-400 rounded-lg bg-[#F9C303] px-10 py-3 text-lg font-semibold transition hover:scale-[.95]">
           Last time, let's get started 🙂
         </button>
       </div>

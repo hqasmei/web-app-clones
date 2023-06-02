@@ -16,7 +16,7 @@ const HeroSection = () => {
         </span>
         <Link
           href="/truewind"
-          className="rounded-lg bg-[#F9C303] px-10 py-[.6rem] font-medium"
+          className="rounded-lg bg-[#F9C303] px-10 py-[.6rem] font-medium hover:scale-[.95] transition duration-400"
         >
           Get Started
         </Link>
