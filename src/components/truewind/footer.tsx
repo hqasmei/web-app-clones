@@ -15,7 +15,7 @@ const Footer = () =>
   const pathname = usePathname();
   return (
     <footer className="bg-[#ECF0F2]">
-      <div className="mx-auto px-10 md:max-w-7xl">
+      <div className="mx-auto px-4 md:px-10 md:max-w-7xl">
         <div className="flex flex-col space-y-12 md:space-y-0 md:flex-row md:justify-between pb-24 pt-36">
           <div>
             <Image src={Logo} alt="" width={130} height={130} />

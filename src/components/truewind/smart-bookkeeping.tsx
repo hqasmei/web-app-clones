@@ -8,10 +8,10 @@ const SmartBookkeeping = () => {
   return (
     <section className="mx-auto  max-w-7xl py-36">
       <div className="mb-20 flex flex-col items-center justify-center space-y-8 text-center">
-        <span className="text-4xl font-bold">
+        <span className="text-4xl font-bold mx-4">
           Smarter Bookkeeping & Finances
         </span>
-        <span className="px-36 text-lg font-medium text-gray-600">
+        <span className="px-4 md:px-36 text-md md:text-lg leading-8 font-medium text-gray-600">
           Through a combination of AI and concierge service, we deliver a
           delightful financial back office experience. Reliable bookkeeping,
           detailed financial models, built exclusively for startups

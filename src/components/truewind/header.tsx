@@ -26,7 +26,7 @@ const Header = () => {
             <Image src={Logo} alt="" width={130} height={130} />
           </div>
 
-          <div className="hidden space-x-10 text-sm md:flex md:flex-row items-center">
+          <div className="hidden items-center space-x-10 text-sm md:flex md:flex-row">
             <div className="flex flex-row space-x-6">
               {navItems.map((item, idx) => (
                 <Link
@@ -72,9 +72,8 @@ const Header = () => {
           <div className="flex flex-col space-y-6 pt-10">
             <div className="flex flex-col space-y-4">
               {navItems.map((item, idx) => (
-                <>
+                <div key={idx}>
                   <Link
-                    key={idx}
                     href={item.path}
                     className={`text-sm font-medium ${
                       pathname == item.path ? "text-[#F9C303]" : ""
@@ -87,7 +86,7 @@ const Header = () => {
                       pathname == item.path ? "bg-[#F9C303]" : "bg-gray-200"
                     } `}
                   ></span>
-                </>
+                </div>
               ))}
             </div>
 

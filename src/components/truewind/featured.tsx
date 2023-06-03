@@ -19,10 +19,10 @@ const Featured = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center space-y-10 text-center">
-        <span className="text-5xl font-bold">
+        <span className="text-4xl font-bold md:text-5xl">
           Get peace of mind with Truewind
         </span>
-        <span className="px-36 text-xl font-medium leading-9 text-gray-600">
+        <span className="px-6 font-medium leading-7 text-gray-600 md:px-36 md:text-xl md:leading-9">
           We designed Truewind to be the finance solution that startup founders
           deserve. Get set up on Truewind in a few minutes and we’ll take care
           of the rest.
