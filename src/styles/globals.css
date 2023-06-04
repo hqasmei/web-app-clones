@@ -2,86 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  .hamburger-menu {
+    @apply flex h-16 w-16 items-center justify-center bg-[#F9C303];
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .hamburger {
+    @apply relative z-20 block cursor-pointer lg:hidden;
+  }
+
+  .hamburger-line-first {
+    @apply m-auto h-0.5 w-6 bg-black transition duration-300;
+  }
+
+  .hamburger-line-second {
+    @apply m-auto mt-1 h-0.5 w-6 bg-black transition duration-300;
+  }
+
+  .hamburger-line-first-open {
+    @apply translate-y-0.5 rotate-45;
+  }
+
+  .hamburger-line-second-open {
+    @apply -translate-y-1 -rotate-45;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 /* Dots */
-.slick-dotted.slick-slider {
-  margin-bottom: 30px;
-}
-
-.slick-dots {
-  position: absolute;
-  bottom: -25px;
-
-  display: block;
-
-  width: 100%;
-  padding: 0;
-  margin: 0;
-
-  list-style: none;
-
-  text-align: center;
-}
-.slick-dots li {
-  position: relative;
-
-  display: inline-block;
-
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-  padding: 0;
-
-  cursor: pointer;
-}
-.slick-dots li button {
-  font-size: 0;
-  line-height: 0;
-
-  display: block;
-
-  width: 20px;
-  height: 20px;
-  padding: 5px;
-
-  cursor: pointer;
-
-  color: transparent;
-  border: 0;
-  outline: none;
-  background: transparent;
-}
-.slick-dots li button:hover,
-.slick-dots li button:focus {
-  outline: none;
-}
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before {
-  opacity: 1;
-}
 .slick-dots li button:before {
   font-family: "slick";
   font-size: 16px;
@@ -102,39 +49,4 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.slick-dots li.slick-active button:before {
-  opacity: 0.75;
-  color: black;
-}
-
-.slick-slider
-{
-    position: relative;
-
-    display: block;
-    flex-direction: row;
-    box-sizing: border-box;
-
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-        touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list
-{
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    margin: 0;
-    padding: 0;
 }

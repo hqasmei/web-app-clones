@@ -52,23 +52,34 @@ const Header = () => {
           </div>
 
           <div
-            className="flex h-16 w-16 items-center justify-center bg-[#F9C303] md:hidden"
+            className="hamburger-menu hover:cursor-pointer md:hidden"
             onClick={handleToggle}
           >
-            <TbMenu size={30} />
+            <div className="hamburger">
+              <div
+                className={`hamburger-line-first ${
+                  isOpen ? "hamburger-line-first-open " : ""
+                }`}
+              ></div>
+              <div
+                className={`hamburger-line-second ${
+                  isOpen ? "hamburger-line-second-open " : ""
+                }`}
+              ></div>
+            </div>
           </div>
         </div>
       </header>
 
       <div
-        className={`fixed inset-0 z-50 bg-white bg-opacity-100 shadow-lg transition-transform duration-500 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-0 z-50 mt-16 h-full  border-r bg-white shadow-xl transition duration-300 lg:static lg:w-auto lg:border-r-0 lg:shadow-none
+ ${
+   isOpen
+     ? "translate-x-[calc(100%-16rem)]"
+     : "translate-x-[100%]"
+ }`}
       >
         <div className="p-4">
-          <div onClick={handleToggle}>
-            <IoCloseOutline size={30} color="black" />
-          </div>
           <div className="flex flex-col space-y-6 pt-10">
             <div className="flex flex-col space-y-4">
               {navItems.map((item, idx) => (
@@ -92,7 +103,7 @@ const Header = () => {
 
             <Link
               href="/truewind"
-              className="rounded-lg bg-[#F9C303] px-8 py-[.6rem] text-center font-medium"
+              className="rounded-lg bg-[#F9C303] px-8 py-[.6rem] text-center font-medium w-1/4"
             >
               Contact
             </Link>
