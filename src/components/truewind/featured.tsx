@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Featured1 from "@/public/truewind/featured1.svg";
-import Featured2 from "@/public/truewind/featured2.svg";
-import Featured3 from "@/public/truewind/featured3.svg";
-import Featured4 from "@/public/truewind/featured4.svg";
+import Featured1 from "@/public/truewind/featured/featured1.svg";
+import Featured2 from "@/public/truewind/featured/featured2.svg";
+import Featured3 from "@/public/truewind/featured/featured3.svg";
+import Featured4 from "@/public/truewind/featured/featured4.svg";
 
 const Featured = () => {
   return (

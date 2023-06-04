@@ -1,10 +1,19 @@
-import Icon1 from "@/public/truewind/icon1.svg";
-import Icon2 from "@/public/truewind/icon2.svg";
-import Icon3 from "@/public/truewind/icon3.svg";
+import Icon1 from "@/public/truewind/smart-booking/icon1.svg";
+import Icon2 from "@/public/truewind/smart-booking/icon2.svg";
+import Icon3 from "@/public/truewind/smart-booking/icon3.svg";
 
 import Testimonial1 from "@/public/truewind/testimonial1.svg";
 import Testimonial2 from "@/public/truewind/testimonial2.svg";
 import Testimonial3 from "@/public/truewind/testimonial3.svg";
+
+import TeamMember1 from "@/public/truewind/team/team1.svg"
+import TeamMember2 from "@/public/truewind/team/team2.svg"
+import TeamMember3 from "@/public/truewind/team/team3.svg"
+import TeamMember4 from "@/public/truewind/team/team4.svg"
+import TeamMember5 from "@/public/truewind/team/team5.svg"
+import TeamMember6 from "@/public/truewind/team/team6.svg"
+import TeamMember7 from "@/public/truewind/team/team7.svg"
+import TeamMember8 from "@/public/truewind/team/team8.svg"
 
 export const items = [
   {
@@ -66,4 +75,47 @@ export const navItems = [
   { name: "Product", path: "/truewind/product" },
   { name: "Musings", path: "/truewind/musings" },
   { name: "Hiring", path: "/truewind/hiring" },
+];
+
+export const team = [
+  {
+    name: "Alex Lee",
+    role: "CEO",
+    image: TeamMember1,
+  }, 
+  {
+    name: "Tennison Chan",
+    role: "CTO",
+    image: TeamMember2,
+  },
+  {
+    name: "Ming Chan",
+    role: "Software Engineer",
+    image: TeamMember3,
+  },
+  {
+    name: "Richard Wei, CPA",
+    role: "Sr Accountant",
+    image: TeamMember4,
+  },
+  {
+    name: "Vanson Leung",
+    role: "Software Engineer",
+    image: TeamMember5,
+  },
+  {
+    name: "Edward Wong",
+    role: "Machine Learning Engineer",
+    image: TeamMember6,
+  },
+  {
+    name: "Melody Tong",
+    role: "Customer Success",
+    image: TeamMember7,
+  },
+  {
+    name: "Mochi",
+    role: "Office Dog",
+    image: TeamMember8,
+  },
 ];

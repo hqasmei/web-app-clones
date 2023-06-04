@@ -6,9 +6,7 @@ import Image from "next/image";
 import Logo from "@/public/truewind/logo.png";
 import { navItems } from "@/utils/constants";
 
-import { usePathname } from "next/navigation";
-import { TbMenu } from "react-icons/tb";
-import { IoCloseOutline } from "react-icons/io5";
+import { usePathname } from "next/navigation"; 
 
 const Header = () => {
   const pathname = usePathname();
