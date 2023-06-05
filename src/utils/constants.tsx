@@ -6,14 +6,21 @@ import Testimonial1 from "@/public/truewind/testimonial1.svg";
 import Testimonial2 from "@/public/truewind/testimonial2.svg";
 import Testimonial3 from "@/public/truewind/testimonial3.svg";
 
-import TeamMember1 from "@/public/truewind/team/team1.svg"
-import TeamMember2 from "@/public/truewind/team/team2.svg"
-import TeamMember3 from "@/public/truewind/team/team3.svg"
-import TeamMember4 from "@/public/truewind/team/team4.svg"
-import TeamMember5 from "@/public/truewind/team/team5.svg"
-import TeamMember6 from "@/public/truewind/team/team6.svg"
-import TeamMember7 from "@/public/truewind/team/team7.svg"
-import TeamMember8 from "@/public/truewind/team/team8.svg"
+import TeamMember1 from "@/public/truewind/team/team1.svg";
+import TeamMember2 from "@/public/truewind/team/team2.svg";
+import TeamMember3 from "@/public/truewind/team/team3.svg";
+import TeamMember4 from "@/public/truewind/team/team4.svg";
+import TeamMember5 from "@/public/truewind/team/team5.svg";
+import TeamMember6 from "@/public/truewind/team/team6.svg";
+import TeamMember7 from "@/public/truewind/team/team7.svg";
+import TeamMember8 from "@/public/truewind/team/team8.svg";
+
+import Finance1 from "@/public/truewind/finance/icon1.svg";
+import Finance2 from "@/public/truewind/finance/icon2.svg";
+import Finance3 from "@/public/truewind/finance/icon3.svg";
+import Finance4 from "@/public/truewind/finance/icon4.svg";
+import Finance5 from "@/public/truewind/finance/icon5.svg";
+import Finance6 from "@/public/truewind/finance/icon6.svg";
 
 export const items = [
   {
@@ -82,7 +89,7 @@ export const team = [
     name: "Alex Lee",
     role: "CEO",
     image: TeamMember1,
-  }, 
+  },
   {
     name: "Tennison Chan",
     role: "CTO",
@@ -117,5 +124,77 @@ export const team = [
     name: "Mochi",
     role: "Office Dog",
     image: TeamMember8,
+  },
+];
+
+export const accountingInfo = [
+  {
+    title: "CONNECT",
+    detail: "Integrate your bank account 🥧",
+    subtitle:
+      "So we won't need to ask you for monthly reports. We'll pull the bank transactions directly. It's as easy as pie",
+  },
+  {
+    title: "UPLOAD",
+    detail: "Upload invoices and contracts ⏳",
+    subtitle:
+      "Invoices and contracts may not impact your cash just yet but it impacts your accounting. Easily upload these files",
+  },
+  {
+    title: "PROCESS",
+    detail: "Using AI to auto tag transactions ⚙️",
+    subtitle:
+      "Our AI can read contracts, invoices, and bank memos to put your accounting on auto pilot",
+  },
+  {
+    title: "CONTEXT",
+    detail: "Add your business context 🧐",
+    subtitle:
+      "Using plain simple English, describe the business activities that your accountant would need to know about",
+  },
+  {
+    title: "AI",
+    detail: "AI digests your natural language 🪄",
+    subtitle:
+      "Accounting requires context. We use AI to interpret the business context and translate it into accounting",
+  },
+];
+
+export const financeInfo = [
+  {
+    title: "Financial model",
+    description:
+      "Let's be real, the model will be wrong. But that's not the point. The point is to challenge how you think about your business",
+    icon: Finance1,
+  },
+  {
+    title: "Hiring plan",
+    description:
+      "You're growing. You're feeling PMF. You need to hire to meet the needs of your customers but who exactly do you need to hire?",
+    icon: Finance2,
+  },
+  {
+    title: "Scalability",
+    description:
+      "Yes, we love growth too! But is your growth scalable? In other words, does your business model allow you to be cash flow positive?",
+    icon: Finance3,
+  },
+  {
+    title: "Unit economics",
+    description:
+      "Part of scalability is unit economics. It may not seem important at this stage of your startup but VCs are thinking about this",
+    icon: Finance4,
+  },
+  {
+    title: "Scenario analysis",
+    description:
+      "You might have a growth plan with a $2M raise. What if you raise $1M? What if VCs want to invest $5M? Be ready for all scenarios",
+    icon: Finance5,
+  },
+  {
+    title: "Total addressable market",
+    description:
+      "If you want to be venture-backed, you must tackle a huge market. That's how VC economics work. We'll teach you 🙂",
+    icon: Finance6,
   },
 ];

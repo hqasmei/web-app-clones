@@ -69,7 +69,7 @@ const Header = () => {
         </div>
       </header>
 
-      <div
+      {/* <div
         className={`fixed inset-0 z-50 mt-16 h-full  border-r bg-white shadow-xl transition duration-300 lg:static lg:w-auto lg:border-r-0 lg:shadow-none
  ${
    isOpen
@@ -107,7 +107,7 @@ const Header = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
