@@ -71,7 +71,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <div className="flex h-screen flex-col items-center bg-[#ECF0F2] px-8 py-36">
+      <div className="flex flex-col items-center bg-[#ECF0F2] px-8 py-36">
         <div className="flex flex-row items-center space-x-2">
           <span className="text-xs font-bold tracking-widest text-[#F9C303]">
             ACCOUNTING
@@ -83,11 +83,54 @@ const ProductPage = () => {
           Our engine is accurate and transparent
         </span>
 
-        <div className="mt-12">
-          <div className="relative h-24 w-1 bg-[#F9C303]">
-            <span className="absolute -right-3 h-7 w-7 rounded-full bg-[#F9C303]"></span>
-            <span className="absolute -right-2 top-1 z-10 h-5 w-5 rounded-full bg-black"></span>
-            <span className="absolute  top-3 h-1 w-10 bg-[#F9C303]"></span>
+        <div className="mt-12 w-full">
+          <div className="relative  grid  grid-cols-2 gap-1">
+            {accountingInfo.map((item, idx) => (
+              <React.Fragment key={idx}>
+                {idx % 2 == 0 && (
+                  <React.Fragment>
+                    <div className="h-48"></div>
+
+                    <div className="relative flex h-48 flex-col space-y-4 pl-8">
+                      <span className="text-xs font-semibold tracking-widest text-[#F9C303]">
+                        {item.title}
+                      </span>
+                      <span className="text-2xl font-bold">{item.detail}</span>
+                      <span className="text-sm font-medium leading-6 tracking-wide text-gray-600">
+                        {item.subtitle}
+                      </span>
+                      <div className="absolute -left-1 -top-5 h-[21rem] w-1 bg-[#F9C303]">
+                        <span className="absolute -right-2 h-5 w-5 rounded-full bg-[#F9C303]"></span>
+                        <span className="absolute -right-1 top-1 z-10 h-3 w-3 rounded-full bg-black"></span>
+                        <span className="absolute  top-2 h-1 w-7 bg-[#F9C303]"></span>
+                      </div>
+                    </div>
+                  </React.Fragment>
+                )}
+
+                {idx % 2 != 0 && (
+                  <React.Fragment>
+                    <div className="flex h-48 flex-col space-y-4 pr-8 text-right">
+                      <span className="text-xs font-semibold tracking-widest text-[#F9C303]">
+                        {item.title}
+                      </span>
+                      <span className="text-2xl font-bold">{item.detail}</span>
+                      <span className="text-sm font-medium leading-6 tracking-wide text-gray-600">
+                        {item.subtitle}
+                      </span>
+                    </div>
+
+                    <div className="relative h-48">
+                      <div className="absolute -left-1 -top-1 h-[21rem] w-1 bg-[#F9C303]">
+                        <span className="absolute -right-2 h-5 w-5 rounded-full bg-[#F9C303]"></span>
+                        <span className="absolute -right-1 top-1 z-10 h-3 w-3 rounded-full bg-black"></span>
+                        <span className="absolute -left-7 top-2 h-1 w-10 bg-[#F9C303]"></span>
+                      </div>
+                    </div>
+                  </React.Fragment>
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
