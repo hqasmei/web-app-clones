@@ -1,22 +1,21 @@
-"use client"
+"use client";
 import React from "react";
 
 import Link from "next/link";
 import Image from "next/image";
 
 import Logo from "@/public/truewind/logo.png";
-import { navItems } from "@/utils/constants";
+import { navItems } from "@/lib/constants";
 import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io";
 
 import { usePathname } from "next/navigation";
 
-const Footer = () =>
-{
+const Footer = () => {
   const pathname = usePathname();
   return (
     <footer className="bg-[#ECF0F2]">
-      <div className="mx-auto px-4 md:px-10 md:max-w-7xl">
-        <div className="flex flex-col space-y-12 md:space-y-0 md:flex-row md:justify-between pb-24 pt-36">
+      <div className="mx-auto px-4 md:max-w-7xl md:px-10">
+        <div className="flex flex-col space-y-12 pb-24 pt-36 md:flex-row md:justify-between md:space-y-0">
           <div>
             <Image src={Logo} alt="" width={130} height={130} />
           </div>
@@ -37,7 +36,7 @@ const Footer = () =>
             ))}
           </div>
         </div>
-        <div className="flex flex-col md:flex-row md:justify-between pb-10 text-sm items-start md:items-center space-y-6 md:space-y-0">
+        <div className="flex flex-col items-start space-y-6 pb-10 text-sm md:flex-row md:items-center md:justify-between md:space-y-0">
           <div className="flex flex-row items-center justify-center space-x-2">
             <Link href="" className="group">
               <div className="relative pb-2 pr-2">

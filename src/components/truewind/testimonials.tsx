@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { testimonials } from "@/utils/constants";
+import { testimonials } from "@/lib/constants";
 import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
 
 const Testimonials = () => {

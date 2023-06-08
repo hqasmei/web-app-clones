@@ -7,7 +7,7 @@ import YCombinator from "@/public/truewind/ycombinator.svg";
 
 import { motion } from "framer-motion";
 
-import { team } from "@/utils/constants";
+import { team } from "@/lib/constants";
 
 import { BiChevronDown } from "react-icons/bi";
 

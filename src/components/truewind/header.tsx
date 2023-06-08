@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Logo from "@/public/truewind/logo.png";
-import { navItems } from "@/utils/constants";
+import { navItems } from "@/lib/constants";
 
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathname = usePathname();

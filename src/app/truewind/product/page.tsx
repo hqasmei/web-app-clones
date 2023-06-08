@@ -6,7 +6,7 @@ import Icon from "@/public/truewind/productIcon.svg";
 
 import { motion } from "framer-motion";
 
-import { accountingInfo, financeInfo } from "@/utils/constants";
+import { accountingInfo, financeInfo } from "@/lib/constants";
 
 import { BiChevronDown } from "react-icons/bi";
 
