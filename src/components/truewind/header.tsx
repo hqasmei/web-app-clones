@@ -20,9 +20,9 @@ const Header = () => {
     <>
       <header className="sticky top-0 z-50 flex h-16 items-center border bg-white text-black md:h-20">
         <div className="mx-auto flex w-full flex-row items-center justify-between md:max-w-7xl md:px-10">
-          <div className="px-8 md:px-0">
+          <Link href="/truewind/" className="px-8 md:px-0">
             <Image src={Logo} alt="" width={130} height={130} />
-          </div>
+          </Link>
 
           <div className="hidden items-center space-x-10 text-sm md:flex md:flex-row">
             <div className="flex flex-row space-x-6">

@@ -13,6 +13,7 @@ const BlogsGrid = async () => {
           const title = post.title ?? "";
           const dateStr = post.publishedAt;
           const date = new Date(dateStr ?? "");
+          const image = post.image ?? "";
           const options: Intl.DateTimeFormatOptions = {
             month: "long",
             day: "numeric",
@@ -20,7 +21,15 @@ const BlogsGrid = async () => {
           };
           const formattedDate = date.toLocaleString("en-US", options);
 
-          return <BlogCard key={idx} title={title} date={formattedDate} />;
+          return (
+            <BlogCard
+              key={idx}
+              title={title}
+              date={formattedDate}
+              image={image}
+              slug={post.slug}
+            />
+          );
         })}
       </div>
       <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -28,6 +37,7 @@ const BlogsGrid = async () => {
           const title = post.title ?? "";
           const dateStr = post.publishedAt;
           const date = new Date(dateStr ?? "");
+          const image = post.image ?? "";
           const options: Intl.DateTimeFormatOptions = {
             month: "long",
             day: "numeric",
@@ -35,7 +45,15 @@ const BlogsGrid = async () => {
           };
           const formattedDate = date.toLocaleString("en-US", options);
 
-          return <BlogCard key={idx} title={title} date={formattedDate} />;
+          return (
+            <BlogCard
+              key={idx}
+              title={title}
+              date={formattedDate}
+              image={image}
+              slug={post.slug}
+            />
+          );
         })}
       </div>
     </div>

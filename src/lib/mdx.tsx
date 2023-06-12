@@ -74,3 +74,6 @@ export const getAllNonFeaturedPostsMeta = async (): Promise<PostMeta[]> => {
 
   return posts;
 };
+
+
+ 
