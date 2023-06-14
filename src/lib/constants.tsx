@@ -81,7 +81,10 @@ export const navItems = [
   { name: "About", path: "/truewind/about" },
   { name: "Product", path: "/truewind/product" },
   { name: "Musings", path: "/truewind/musings" },
-  { name: "Hiring", path: "/truewind/hiring" },
+  {
+    name: "Hiring",
+    path: "https://truewind.notion.site/Truewind-is-hiring-14fef79adac6424e95eb99b2560a017b",
+  },
 ];
 
 export const team = [

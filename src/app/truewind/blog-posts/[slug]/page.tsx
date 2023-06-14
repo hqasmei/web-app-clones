@@ -2,15 +2,26 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiArrowLeft } from "react-icons/fi";
+import Mdx from "@/lib/mdx";
+import { allMusings } from "contentlayer/generated";
 
-import { getFeaturedPostBySlug, getNonFeaturedPostBySlug } from "@/lib/mdx";
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const project = allMusings.find((project) => project.slug === params.slug);
+
+  return {
+    title: project?.title,
+  };
+}
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
-  const featuredPost = await getFeaturedPostBySlug(params.slug);
-  // const nonFeaturedPost = await getNonFeaturedPostBySlug(params.slug);
+  const project = allMusings.find((project) => project.slug === params.slug);
 
-  const title = featuredPost.meta.title;
-  const dateStr = featuredPost.meta.publishedAt;
+  const title = project?.title;
+  const dateStr = project?.publishedAt;
   const date = new Date(dateStr ?? "");
   const options: Intl.DateTimeFormatOptions = {
     month: "long",
@@ -18,21 +29,21 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
     year: "numeric",
   };
   const formattedDate = date.toLocaleString("en-US", options);
-  const author = featuredPost.meta.author;
-  const image = featuredPost.meta.image || "";
+  const author = project?.author;
+  const image = project?.image || "";
 
-  const content = featuredPost.content;
+  const content = project?.body.code ?? "";
 
   return (
     <section className="px-4 ">
-      <Link
-        href="/truewind/musings"
-        className="group flex flex-row items-center space-x-1  py-6"
-      >
-        <FiArrowLeft className="group-hover:text-gray-600" />
-        <span className="group-hover:text-gray-600">Back</span>
-      </Link>
-      <div className="mx-auto max-w-6xl py-20">
+      <div className="mx-auto max-w-6xl py-10">
+        <Link
+          href="/truewind/musings"
+          className="group flex flex-row items-center space-x-1  py-12"
+        >
+          <FiArrowLeft className="group-hover:text-gray-600" />
+          <span className="group-hover:text-gray-600">Back</span>
+        </Link>
         <div className="mb-10 flex flex-col items-center justify-center space-y-6 text-center">
           <div className="flex flex-row items-center space-x-2">
             <span className="text-xs font-bold tracking-widest text-[#F9C303]">
@@ -58,7 +69,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
           />
         </div>
 
-        <div>{content}</div>
+        <Mdx code={content} />
       </div>
     </section>
   );

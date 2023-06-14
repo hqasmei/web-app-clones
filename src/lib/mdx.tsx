@@ -1,79 +1,34 @@
-import fs from "fs";
-import path from "path";
-import { compileMDX } from "next-mdx-remote/rsc";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import Image, { type ImageProps } from "next/image";
 
-const rootDirectory = path.join(process.cwd(), "src/content");
-const featuredDirectory = path.join(rootDirectory, "featured");
-const nonFeaturedDirectory = path.join(rootDirectory, "non-featured");
+import Prose from "./prose";
 
-type PostMeta = {
-  title?: string;
-  author?: string;
-  publishedAt?: string;
-  description?: string;
-  image?: string;
-  minuteRead?: string;
-  slug?: string;
-};
-
-type Post = {
-  meta: PostMeta;
-  content: any;
-};
-
-export async function getFeaturedPostBySlug(slug: string): Promise<Post> {
-  const realSlug = slug.replace(/\.mdx$/, "");
-  const filePath = path.join(featuredDirectory, `${realSlug}.mdx`);
-
-  const fileContent = fs.readFileSync(filePath, { encoding: "utf8" });
-
-  const { frontmatter, content } = await compileMDX({
-    source: fileContent,
-    options: { parseFrontmatter: true },
-  });
-
-  return { meta: { ...frontmatter, slug: realSlug }, content };
+function MdxImage(props: ImageProps) {
+  return (
+    <Image
+      src={props.src}
+      alt={props.alt}
+      width={props.width}
+      height={props.height}
+      priority={props.priority}
+    />
+  );
 }
 
-export const getAllFeaturedPostsMeta = async (): Promise<PostMeta[]> => {
-  const files = await fs.promises.readdir(featuredDirectory);
-
-  let posts: PostMeta[] = [];
-
-  for (const file of files) {
-    const { meta } = await getFeaturedPostBySlug(file);
-    posts.push(meta);
-  }
-
-  return posts;
+const components = {
+  Image: MdxImage,
 };
 
-export async function getNonFeaturedPostBySlug(slug: string): Promise<Post> {
-  const realSlug = slug.replace(/\.mdx$/, "");
-  const filePath = path.join(nonFeaturedDirectory, `${realSlug}.mdx`);
-
-  const fileContent = fs.readFileSync(filePath, { encoding: "utf8" });
-
-  const { frontmatter, content } = await compileMDX({
-    source: fileContent,
-    options: { parseFrontmatter: true },
-  });
-
-  return { meta: { ...frontmatter, slug: realSlug }, content };
+interface MdxProps {
+  code: string;
 }
 
-export const getAllNonFeaturedPostsMeta = async (): Promise<PostMeta[]> => {
-  const files = await fs.promises.readdir(nonFeaturedDirectory);
+export default function Mdx({ code }: MdxProps) {
+  const Component = useMDXComponent(code);
 
-  let posts: PostMeta[] = [];
-
-  for (const file of files) {
-    const { meta } = await getNonFeaturedPostBySlug(file);
-    posts.push(meta);
-  }
-
-  return posts;
-};
-
-
- 
+  return (
+    <Prose>
+      <Component components={{ ...components }} />
+    </Prose>
+  );
+}

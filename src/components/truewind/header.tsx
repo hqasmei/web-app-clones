@@ -26,19 +26,38 @@ const Header = () => {
 
           <div className="hidden items-center space-x-10 text-sm md:flex md:flex-row">
             <div className="flex flex-row space-x-6">
-              {navItems.map((item, idx) => (
-                <Link
-                  key={idx}
-                  href={item.path}
-                  className={
-                    pathname == item.path
-                      ? "text-[#F9C303] underline decoration-2 underline-offset-8"
-                      : "hover:text-[#F9C303] hover:underline hover:decoration-2 hover:underline-offset-8"
-                  }
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item, idx) => {
+                if (item.name === "Hiring") {
+                  return (
+                    <Link
+                      key={idx}
+                      href={item.path}
+                      target="_blank"
+                      className={
+                        pathname == item.path
+                          ? "text-[#F9C303] underline decoration-2 underline-offset-8"
+                          : "hover:text-[#F9C303] hover:underline hover:decoration-2 hover:underline-offset-8"
+                      }
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                } else {
+                  return (
+                    <Link
+                      key={idx}
+                      href={item.path}
+                      className={
+                        pathname == item.path
+                          ? "text-[#F9C303] underline decoration-2 underline-offset-8"
+                          : "hover:text-[#F9C303] hover:underline hover:decoration-2 hover:underline-offset-8"
+                      }
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                }
+              })}
             </div>
 
             <Link

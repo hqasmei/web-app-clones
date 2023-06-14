@@ -2,6 +2,11 @@ import React from "react";
 
 import BlogsGrid from "@/components/truewind/blogs-grid";
 
+export const metadata = {
+  title: "Truewind | Musings",
+  description: "Truewind",
+};
+
 const MusingsPage = () => {
   return (
     <section>

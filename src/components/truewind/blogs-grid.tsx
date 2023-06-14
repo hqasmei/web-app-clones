@@ -1,15 +1,21 @@
 import React from "react";
 import BlogCard from "./blog-card";
-import { getAllFeaturedPostsMeta, getAllNonFeaturedPostsMeta } from "@/lib/mdx";
+
+import { allMusings } from "contentlayer/generated";
 
 const BlogsGrid = async () => {
-  const featuredPosts = await getAllFeaturedPostsMeta();
-  const nonFeaturedPosts = await getAllNonFeaturedPostsMeta();
+  const featureMusings = allMusings.filter(
+    (project) => project.featured === true
+  );
+
+  const nonFeatureMusings = allMusings.filter(
+    (project) => project.featured === false
+  );
 
   return (
     <div className="mx-auto flex max-w-xl flex-col space-y-12 px-4 pb-4 md:max-w-6xl">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {featuredPosts.map((post, idx) => {
+        {featureMusings.map((post, idx) => {
           const title = post.title ?? "";
           const dateStr = post.publishedAt;
           const date = new Date(dateStr ?? "");
@@ -33,7 +39,7 @@ const BlogsGrid = async () => {
         })}
       </div>
       <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-3">
-        {nonFeaturedPosts.map((post, idx) => {
+        {nonFeatureMusings.map((post, idx) => {
           const title = post.title ?? "";
           const dateStr = post.publishedAt;
           const date = new Date(dateStr ?? "");
