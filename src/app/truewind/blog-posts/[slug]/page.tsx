@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FiArrowLeft } from "react-icons/fi";
 import Mdx from "@/lib/mdx";
 import { allMusings } from "contentlayer/generated";
+import ReadMore from "@/components/truewind/read-more";
 
 export async function generateMetadata({
   params,
@@ -28,15 +29,16 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
     day: "numeric",
     year: "numeric",
   };
+  console.log(project);
   const formattedDate = date.toLocaleString("en-US", options);
   const author = project?.author;
   const image = project?.image || "";
-
+  // const recommended = project?.recommend || [];
   const content = project?.body.code ?? "";
 
   return (
-    <section className="px-4 ">
-      <div className="mx-auto max-w-6xl py-10">
+    <section>
+      <div className="mx-auto max-w-6xl px-4 sm:px-10">
         <Link
           href="/truewind/musings"
           className="group flex flex-row items-center space-x-1  py-12"
@@ -63,14 +65,16 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
           <Image
             src={image}
             alt=""
-            width={1000}
+            width={900}
             height={1000}
-            className="rounded-lg"
+            className="h-[300px] w-full rounded-lg object-cover object-center md:h-[570px]"
           />
         </div>
 
         <Mdx code={content} />
       </div>
+
+      <ReadMore />
     </section>
   );
 };

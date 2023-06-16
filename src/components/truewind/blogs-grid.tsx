@@ -21,6 +21,7 @@ const BlogsGrid = async () => {
           const date = new Date(dateStr ?? "");
           const image = post.image ?? "";
           const options: Intl.DateTimeFormatOptions = {
+            timeZone: "UTC",
             month: "long",
             day: "numeric",
             year: "numeric",
@@ -39,28 +40,35 @@ const BlogsGrid = async () => {
         })}
       </div>
       <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-3">
-        {nonFeatureMusings.map((post, idx) => {
-          const title = post.title ?? "";
-          const dateStr = post.publishedAt;
-          const date = new Date(dateStr ?? "");
-          const image = post.image ?? "";
-          const options: Intl.DateTimeFormatOptions = {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          };
-          const formattedDate = date.toLocaleString("en-US", options);
+        {nonFeatureMusings
+          .sort(
+            (a, b) =>
+              new Date(b.publishedAt).getTime() -
+              new Date(a.publishedAt).getTime()
+          )
+          .map((post, idx) => {
+            const title = post.title ?? "";
+            const dateStr = post.publishedAt;
+            const date = new Date(dateStr ?? "");
+            const image = post.image ?? "";
+            const options: Intl.DateTimeFormatOptions = {
+              timeZone: "UTC",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            };
+            const formattedDate = date.toLocaleString("en-US", options);
 
-          return (
-            <BlogCard
-              key={idx}
-              title={title}
-              date={formattedDate}
-              image={image}
-              slug={post.slug}
-            />
-          );
-        })}
+            return (
+              <BlogCard
+                key={idx}
+                title={title}
+                date={formattedDate}
+                image={image}
+                slug={post.slug}
+              />
+            );
+          })}
       </div>
     </div>
   );
