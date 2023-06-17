@@ -29,16 +29,15 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
     day: "numeric",
     year: "numeric",
   };
-  console.log(project);
   const formattedDate = date.toLocaleString("en-US", options);
   const author = project?.author;
   const image = project?.image || "";
-  // const recommended = project?.recommend || [];
+  const recommend = project?.recommend || [];
   const content = project?.body.code ?? "";
-
+ 
   return (
     <section>
-      <div className="mx-auto max-w-6xl px-4 sm:px-10">
+      <div className="mx-auto max-w-6xl px-8 sm:px-10">
         <Link
           href="/truewind/musings"
           className="group flex flex-row items-center space-x-1  py-12"
@@ -74,7 +73,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         <Mdx code={content} />
       </div>
 
-      <ReadMore />
+      <ReadMore recommend={recommend} />
     </section>
   );
 };

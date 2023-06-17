@@ -10,25 +10,25 @@ export const Musings = defineDocumentType(() => ({
     author: { type: "string", required: true },
     featured: { type: "boolean", required: true },
     image: { type: "string", required: true },
-    // reccomend: {
-    //   type: "list",
-    //   of: {
-    //     type: "string",
-    //     options: [
-    //       "an-interview-with-ryan-keating-financial-advice-for-startups",
-    //       "balancing-innovation-and-risk-navigating-regulatory-frameworks-in-the-world-of-generative-ai",
-    //       "best-practices-from-the-cfo-suite",
-    //       "breaking-down-the-fpa-function-of-the-cfo-suite",
-    //       "budget-vs-actual-variance-analysis",
-    //       "easier-accounting-how-truewind-helps-you-focus-on-the-things-that-matter",
-    //       "gpt-4-impacts-on-startups-and-the-labor-market",
-    //       "saas-quick-ratio-measuring-growth-efficiency",
-    //       "the-ai-startups-rising-higher-as-tiktoks-regulatory-challenges-mount",
-    //       "y-combinator-w23-generative-ai-landscape",
-    //     ],
-    //   },
-    //   required: false,
-    // },
+    recommend: {
+      type: "list",
+      of: {
+        type: "string",
+        options: [
+          "an-interview-with-ryan-keating-financial-advice-for-startups",
+          "balancing-innovation-and-risk-navigating-regulatory-frameworks-in-the-world-of-generative-ai",
+          "best-practices-from-the-cfo-suite",
+          "breaking-down-the-fpa-function-of-the-cfo-suite",
+          "budget-vs-actual-variance-analysis",
+          "easier-accounting-how-truewind-helps-you-focus-on-the-things-that-matter",
+          "gpt-4-impacts-on-startups-and-the-labor-market",
+          "saas-quick-ratio-measuring-growth-efficiency",
+          "the-ai-startups-rising-higher-as-tiktoks-regulatory-challenges-mount",
+          "y-combinator-w23-generative-ai-landscape",
+        ],
+      },
+      required: true,
+    },
   },
   computedFields: {
     slug: {

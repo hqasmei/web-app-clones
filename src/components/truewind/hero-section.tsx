@@ -28,15 +28,16 @@ const HeroSection = () => {
         animate="animate"
         variants={heroVariants}
       >
-        <div className="mx-auto flex w-full flex-col items-center justify-center space-y-12 text-center">
-          <span className="px-28 text-[2.5rem] font-bold leading-[3.5rem] md:text-5xl">
+        <div className="flex w-full flex-col items-center justify-center space-y-12 text-center">
+          <span className="px-28 text-[2.5rem] font-bold leading-[3.5rem] md:text-[2.75rem]">
             AI-Powered Bookkeeping & Finance for Startups
           </span>
-          <span className="mx-auto w-full px-14 md:px-24 text-xl font-medium leading-[2rem] text-gray-500">
+          <span className="mx-auto w-full px-14 text-xl font-medium leading-[2rem] text-gray-500 md:px-24">
             Using AI to power bookkeeping & finance means less errors, more
             transparency, and faster monthly close. Get peace of mind with
             Truewind
           </span>
+
           <Link
             href="/truewind"
             className="duration-400 rounded-lg bg-[#F9C303] px-10 py-[.6rem] font-medium transition hover:scale-[.95]"
