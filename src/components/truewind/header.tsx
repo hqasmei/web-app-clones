@@ -18,13 +18,13 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex h-16 items-center border bg-white text-black md:h-20">
-        <div className="mx-auto flex w-full flex-row items-center justify-between md:max-w-7xl md:px-10">
+      <header className="sticky top-0 z-30 flex h-16  border bg-white text-black md:h-20">
+        <div className="relative mx-auto flex w-full flex-row items-center justify-between md:max-w-7xl md:px-10">
           <Link href="/truewind/" className="px-8 md:px-0">
             <Image src={Logo} alt="" width={130} height={130} />
           </Link>
 
-          <div className="hidden items-center space-x-10 text-sm md:flex md:flex-row">
+          <div className="hidden items-center text-sm md:flex md:flex-row md:space-x-10">
             <div className="flex flex-row space-x-6">
               {navItems.map((item, idx) => {
                 if (item.name === "Hiring") {
@@ -61,7 +61,8 @@ const Header = () => {
             </div>
 
             <Link
-              href="/truewind"
+              href="https://form.typeform.com/to/SrleFO1U?typeform-source=www.truewind.ai"
+              target="_blank"
               className="duration-400 rounded-lg bg-[#F9C303] px-8 py-[.6rem] font-medium transition hover:scale-[.95]"
             >
               Contact Us
@@ -69,7 +70,7 @@ const Header = () => {
           </div>
 
           <div
-            className="hamburger-menu hover:cursor-pointer md:hidden"
+            className="hamburger-menu relative z-50 hover:cursor-pointer md:hidden"
             onClick={handleToggle}
           >
             <div className="hamburger">
@@ -86,47 +87,45 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+        <div
+          className={`fixed inset-y-0 w-[280px] right-0  z-20 h-full border border-r bg-white shadow-xl transition duration-300 md:hidden lg:static lg:w-auto lg:border-r-0 lg:shadow-none
+ ${isOpen ? "translate-x-0" : "translate-x-[100%]"}`}
+        >
+          <div className="flex flex-col p-4">
+            <div className="flex flex-col space-y-6 pt-28">
+              <div className="mb-4 flex flex-col space-y-8">
+                {navItems.map((item, idx) => (
+                  <div key={idx} className="flex flex-col space-y-4">
+                    <Link
+                      href={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-sm font-medium ${
+                        pathname == item.path ? "text-[#F9C303]" : ""
+                      } `}
+                    >
+                      {item.name}
+                    </Link>
 
-      {/* <div
-        className={`fixed inset-0 z-50 mt-16 h-full  border-r bg-white shadow-xl transition duration-300 lg:static lg:w-auto lg:border-r-0 lg:shadow-none
- ${
-   isOpen
-     ? "translate-x-[calc(100%-16rem)]"
-     : "translate-x-[100%]"
- }`}
-      >
-        <div className="p-4">
-          <div className="flex flex-col space-y-6 pt-10">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item, idx) => (
-                <div key={idx}>
-                  <Link
-                    href={item.path}
-                    className={`text-sm font-medium ${
-                      pathname == item.path ? "text-[#F9C303]" : ""
-                    } `}
-                  >
-                    {item.name}
-                  </Link>
-                  <span
-                    className={`h-0.5 w-full  ${
-                      pathname == item.path ? "bg-[#F9C303]" : "bg-gray-200"
-                    } `}
-                  ></span>
-                </div>
-              ))}
+                    <span
+                      className={`h-0.5  ${
+                        pathname == item.path ? "bg-[#F9C303]" : "bg-gray-200"
+                      } `}
+                    ></span>
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                href="/truewind"
+                onClick={() => setIsOpen(false)}
+                className="rounded-lg bg-[#F9C303] px-8 py-[.6rem] text-center font-medium"
+              >
+                Contact
+              </Link>
             </div>
-
-            <Link
-              href="/truewind"
-              className="rounded-lg bg-[#F9C303] px-8 py-[.6rem] text-center font-medium w-1/4"
-            >
-              Contact
-            </Link>
           </div>
         </div>
-      </div> */}
+      </header>
     </>
   );
 };

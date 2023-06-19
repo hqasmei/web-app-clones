@@ -1,5 +1,8 @@
 import React from "react";
+
+import Link from "next/link";
 import Image from "next/image";
+
 import Featured1 from "@/public/truewind/featured/featured1.svg";
 import Featured2 from "@/public/truewind/featured/featured2.svg";
 import Featured3 from "@/public/truewind/featured/featured3.svg";
@@ -22,14 +25,19 @@ const Featured = () => {
         <span className="text-4xl font-bold md:text-5xl">
           Get peace of mind with Truewind
         </span>
-        <span className="px-6 font-medium leading-7 text-gray-600 md:px-36 md:text-xl md:leading-9">
+        <span className="px-6 font-medium leading-7 text-gray-600 md:px-36 md:text-lg md:leading-9">
           We designed Truewind to be the finance solution that startup founders
           deserve. Get set up on Truewind in a few minutes and we’ll take care
           of the rest.
         </span>
-        <button className="duration-400 rounded-lg bg-[#F9C303] px-10 py-3 text-lg font-semibold transition hover:scale-[.95]">
+
+        <Link
+          href="https://form.typeform.com/to/SrleFO1U?typeform-source=www.truewind.ai"
+          target="_blank"
+          className="duration-400 rounded-lg bg-[#F9C303] px-10 py-3 text-lg font-semibold transition hover:scale-[.95]"
+        >
           Last time, let's get started 🙂
-        </button>
+        </Link>
       </div>
     </div>
   );

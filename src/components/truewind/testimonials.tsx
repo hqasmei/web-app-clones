@@ -73,7 +73,7 @@ const Testimonials = () => {
                         alt=""
                         width={400}
                         height={400}
-                        className="relative z-50 rounded-xl"
+                        className="relative z-0 rounded-xl"
                       />
                     </div>
                   </div>
